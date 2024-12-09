@@ -18,6 +18,7 @@ export class TestComponent1Component {
 
   testString="Test String 1";
 
+
   testNumber= 23;
 
   testStrings=[
@@ -28,6 +29,8 @@ export class TestComponent1Component {
     'string5'
   ]
 
+  stringIndex=0;
+  testString=this.testStrings[this.stringIndex];
 
 
   getServiceString(){
@@ -41,4 +44,8 @@ export class TestComponent1Component {
   }
 
 
+  onClickChangeString(){
+    this.stringIndex=(this.stringIndex+1)%this.testStrings.length;
+    this.testString=this.testStrings[this.stringIndex];
+  }
 }
